@@ -42,10 +42,101 @@ header {
     background: transparent;
 }
 
-.hero-service {
+.hero-service-container {
+    width: 100%;
     margin-top: 6rem;
+    font-size: 2rem;
+    font-weight: 300;
+    display: flex;
+
+    gap: 2rem; /* spacing between hero1, hero2, h   ero3 */
+    align-items: center; /* align top edges */
+}
+.hero1,
+.hero2 {
+    margin-right: 2rem;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
 }
 
+.hero3 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center; /* right-align icons */
+    gap: 2rem; /* spacing between icons */
+}
+
+.countdown {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.image-crop {
+    width: 1300px; /* cropped width */
+    height: 400px; /* cropped height */
+    overflow: hidden; /* hides the excess */
+}
+
+.image-crop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fill crop box */
+    object-position: center -150px; /* shift image upward */
+    border-radius: 2rem;
+}
+.welcome-container {
+    margin-top: 5rem;
+    max-width: 1300px;
+    display: flex;
+    width: 85vw;
+    text-align: left; /* optional: prevents weird text centering */
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-text-cols {
+    display: flex;
+    width: 100%; /* important */
+    justify-content: left; /* centers the two columns together */
+}
+.welcome-text-intro-bold {
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 60%;
+    color: rgb(50, 50, 50);
+}
+
+.welcome-text-intro {
+    width: 65%;
+}
+
+.h4 {
+    text-align: left;
+    color: rgb(165, 165, 165);
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.welcome-text-description {
+    justify-content: center;
+    font-size: 1.2rem;
+    width: 35%;
+    color: rgb(70, 70, 70);
+    font-weight: 350;
+}
 header .header-wrapper {
     display: flex;
     /* flex-direction: column; */
@@ -97,11 +188,287 @@ header nav {
     font-size: 1.2rem;
     font-weight: 500;
 }
+.nav-btn.active {
+    background-color: rgba(102, 98, 98, 0.7);
+    color: white;
+    transform: translateY(-2px);
+}
 
 .nav-btn:hover {
-    background: rgba(102, 98, 98, 0.7);
+    background: rgba(102, 98, 98, 0.3);
     color: white;
 }
+
+.nav-btn.click-animate {
+    animation: clickPulse 0.2s ease;
+}
+
+@keyframes clickPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*mission */
+
+.mission-section-container {
+    padding-top: 3rem;
+    position: relative;
+    padding-bottom: 3rem;
+    border-radius: 50px;
+    margin: 1rem;
+    background: url("../assets/mission.png") center/cover no-repeat;
+    height: 95rem;
+}
+/* image container */
+.father-container-img {
+    width: 100%; /* fill the width of the container */
+    height: 400px; /* set desired height */
+    object-fit: cover; /* crops to fill, keeps aspect ratio */
+    object-position: 20% 60%;
+    border-radius: 1rem; /* optional: rounded corners */
+}
+
+.mission-container {
+    width: 95vw; /* fills most of the viewport */
+    max-width: 1300px; /* optional, keeps it from getting too wide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* center the container */
+    padding: 0 2rem; /* optional padding inside */
+}
+
+.gospel-subtext {
+    color: rgba(255, 255, 255, 0.8); /* whitish, 70% opacity */
+    font-size: 1.2rem;
+    width: 35%;
+    text-align: left;
+    line-height: 2rem;
+}
+.gospel-space {
+    width: 15%;
+}
+
+.mission-cards-section {
+    flex-direction: column;
+    padding-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mission-bottom-section {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    align-items: left;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.gospel-text-bold {
+    display: flex;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 700;
+    max-width: 60%;
+    color: rgba(255, 255, 255, 0.6); /* whitish, 70% opacity */
+}
+.mission-text-intro-bold {
+    font-size: 2rem;
+    width: 48%;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9); /* whitish, 70% opacity */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.gospel-text-basic {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mission-h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cards {
+    padding-bottom: 6rem;
+    display: flex;
+    gap: 3rem;
+}
+.card {
+    background-color: white;
+    width: 25rem;
+    height: 20rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+.card-h1 {
+    padding-top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+}
+.card-p1 {
+    max-width: 22rem;
+    padding-bottom: 1rem;
+}
+
+.card-p2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #eb3300;
+}
+
+.share-section {
+    background-color: #2e2320;
+    padding-top: 3rem;
+    position: relative;
+    padding-bottom: 3rem;
+    border-radius: 50px;
+    margin: 1rem;
+    height: 35rem;
+}
+.share-big-image {
+    border: 1px solid green;
+    width: 100%;
+}
+
+.share-smaller-image {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.share-container {
+    width: 95vw; /* fills most of the viewport */
+    max-width: 1300px; /* optional, keeps it from getting too wide */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* center the container */
+    padding: 0 2rem; /* optional padding inside */
+}
+.share-text {
+    width: 100%;
+}
+
+.volunteer-text-section {
+    width: 25%;
+    text-align: center;
+}
+.volunteer-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portraitCarousel .carousel-item img {
+    height: 400px; /* Portrait height */
+    width: auto;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#portraitCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    bottom: -50px; /* text below the image */
+}
+
+#portraitCarousel .carousel-control-prev-icon,
+#portraitCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent circle */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.visit-container {
+    font-size: 1rem;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0rem;
+}
+.love-word {
+    color: #eb3300;
+}
+
+.after-love {
+    color: rgba(102, 98, 98, 0.7);
+}
+.h2-visit {
+    line-height: 4rem;
+
+    font-size: 3.5rem;
+    color: black;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.visit-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: radial-gradient(
+            circle 1000px at top right,
+            #dcdcdc 0%,
+            rgba(220, 220, 220, 0) 70%
+        ),
+        radial-gradient(
+            circle 1000px at top left,
+            #dcdcdc 0%,
+            rgba(220, 220, 220, 0) 70%
+        ),
+        radial-gradient(
+            circle 1200px at bottom left,
+            #dcdcdc 0%,
+            rgba(220, 220, 220, 0) 70%
+        ),
+        radial-gradient(
+            circle 1200px at bottom right,
+            #dcdcdc 0%,
+            rgba(220, 220, 220, 0) 70%
+        ),
+        white;
+    background-blend-mode: normal;
+    background-size: cover;
+}
+/*hf test */
 
 /* Hero */
 .hero-section {
@@ -121,6 +488,7 @@ header nav {
 }
 
 .hero-content {
+    width: 100%;
     position: relative;
     z-index: 2;
     color: white;
@@ -146,13 +514,13 @@ header nav {
 
 .square-button,
 .square-button-secondary {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 2rem;
     font-size: 1.5rem;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .square-button {
@@ -166,10 +534,10 @@ header nav {
 }
 
 .square-button:hover {
-    color: red;
+    color: #eb3300;
 }
 .square-button-secondary:hover {
-    color: red;
+    color: #eb3300;
 }
 
 /* Responsive */

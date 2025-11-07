@@ -154,8 +154,31 @@ document.addEventListener("DOMContentLoaded", function () {
         // lastScrollTop = scrollTop;
     });
 
+    const iconSize = "25px";
+    const iconColor = "#ff0000";
+
+    const icons = document.querySelectorAll(".icon");
+    icons.forEach((icon) => {
+        icon.style.width = iconSize;
+        icon.style.height = iconSize;
+        icon.style.fill = iconColor;
+    });
+
     const navButtons = document.querySelectorAll(".nav-btn");
+    navButtons[0].classList.add("active");
+
     navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Remove active from all
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Trigger click animation
+            button.classList.remove("click-animate"); // reset if still applied
+            void button.offsetWidth; // force reflow to restart animation
+            button.classList.add("click-animate");
+        });
+
         button.addEventListener("mouseenter", function () {
             this.style.transform = "translateY(-2px)";
         });
@@ -163,6 +186,21 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("mouseleave", function () {
             this.style.transform = "translateY(0)";
         });
+    });
+
+    const buttonsSquare = document.querySelectorAll(
+        ".square-button, .square-button-secondary"
+    );
+
+    buttonsSquare.forEach((button) => {
+        button.addEventListener(
+            "mouseenter",
+            () => (button.style.transform = "translateY(-2px)")
+        );
+        button.addEventListener(
+            "mouseleave",
+            () => (button.style.transform = "translateY(0)")
+        );
     });
 
     // ===============================
@@ -206,4 +244,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // =============================== CAROSEUL
+    const carouselInner = document.getElementById("carouselInner");
+    if (!carouselInner) return; // exit if carousel not on page
+
+    const imageCount = 5; // number of images in assets/caro/
+
+    for (let i = 1; i <= imageCount; i++) {
+        const div = document.createElement("div");
+        div.classList.add("carousel-item");
+        if (i === 1) div.classList.add("active"); // first image active
+        div.innerHTML = `
+      <img src="assets/caro/image${i}.png" class="d-block mx-auto" alt="Image ${i}">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Image ${i}</h5>
+        <p>Description for image ${i}</p>
+      </div>
+    `;
+        carouselInner.appendChild(div);
+    }
 });
