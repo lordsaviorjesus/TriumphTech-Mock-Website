@@ -122,24 +122,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const navButtons = document.querySelectorAll(".nav-btn");
-    navButtons[0].classList.add("active");
-    navButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            navButtons.forEach((btn) => btn.classList.remove("active"));
-            button.classList.add("active");
-            button.classList.remove("click-animate");
-            void button.offsetWidth;
-            button.classList.add("click-animate");
-        });
-        button.addEventListener(
-            "mouseenter",
-            () => (button.style.transform = "translateY(-2px)")
-        );
-        button.addEventListener(
-            "mouseleave",
-            () => (button.style.transform = "translateY(0)")
-        );
+navButtons[0].classList.add("active");
+
+navButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        // ---- Active state and animation ----
+        navButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        button.classList.remove("click-animate");
+        void button.offsetWidth;
+        button.classList.add("click-animate");
+
+        // ---- Smooth scroll ----
+        const targetId = button.dataset.target; // make sure data-target is set on your button
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80, // adjust if header is sticky
+                behavior: "smooth",
+            });
+        }
     });
+
+    button.addEventListener(
+        "mouseenter",
+        () => (button.style.transform = "translateY(-2px)")
+    );
+    button.addEventListener(
+        "mouseleave",
+        () => (button.style.transform = "translateY(0)")
+    );
+});
 
     document
         .querySelectorAll(
@@ -207,4 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         });
     });
+
+    //==scroll
 });

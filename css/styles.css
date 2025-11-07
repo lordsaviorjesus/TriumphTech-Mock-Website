@@ -222,53 +222,66 @@ header nav {
 
 /* --------------------------------------------------
    MISSION SECTION
+   (REWRITTEN / FIXED FOR RESPONSIVE)
 -------------------------------------------------- */
+/* container: make height automatic and prevent overflow */
 .mission-section-container {
     padding-top: 3rem;
     padding-bottom: 3rem;
     position: relative;
     margin: 1rem;
-    height: 95rem;
+    height: auto; /* removed fixed height to avoid overflow */
     border-radius: 50px;
     background: url("../assets/mission.png") center/cover no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
+/* image at bottom — ensure it never exceeds container width */
 .father-container-img {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    object-position: 20% 60%;
+    object-position: center 60%; /* moves the image down */
     border-radius: 1rem;
 }
 
+/* mission inner container — full width but constrained by max-width */
 .mission-container {
-    width: 95vw;
+    width: 100%;
     max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 0 1rem; /* reduced side padding for small screens */
+    box-sizing: border-box;
 }
 
+/* flexible text blocks — do not force fixed widths */
 .gospel-subtext {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.2rem;
-    width: 35%;
-    line-height: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    max-width: 700px;
+    width: 100%;
+    line-height: 1.8rem;
+    text-align: left;
 }
 
 .gospel-space {
     width: 15%;
 }
 
+/* cards section */
 .mission-cards-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 6rem;
+    padding-top: 4rem;
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mission-bottom-section {
@@ -277,18 +290,20 @@ header nav {
     flex-direction: column;
 }
 
+/* typographic adjustments */
 .gospel-text-bold {
     font-size: 1.3rem;
     font-weight: 700;
-    max-width: 60%;
-    color: rgba(255, 255, 255, 0.6);
+    max-width: 100%;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .mission-text-intro-bold {
     font-size: 2rem;
-    width: 48%;
+    max-width: 700px;
+    width: 100%;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -302,18 +317,27 @@ header nav {
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.25rem;
 }
 
 /* CARDS */
+
+/* base: allow wrapping and flexible sizing so cards never overflow */
 .cards {
     display: flex;
-    gap: 3rem;
-    padding-bottom: 6rem;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    flex-wrap: wrap; /* allow wrap at narrower widths */
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card {
-    width: 25rem;
-    height: 20rem;
+    width: min(25rem, 100%); /* don't exceed 25rem, but allow smaller widths */
+    height: auto; /* let content define height */
     background: white;
     border-radius: 2rem;
     display: flex;
@@ -324,16 +348,26 @@ header nav {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
         box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.card img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
 }
 
 .card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
 }
 
 .card-h1 {
-    padding-top: 0.5rem;
-    font-size: 2rem;
+    padding-top: 0.2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     padding-bottom: 0.5rem;
 }
@@ -341,14 +375,16 @@ header nav {
 .card-p1 {
     max-width: 22rem;
     padding-bottom: 1rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.4rem;
 }
 
 .card-p2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #eb3300;
 }
-
 /* --------------------------------------------------
    SHARE SECTION
 -------------------------------------------------- */
@@ -361,8 +397,8 @@ header nav {
 
 .share-container {
     display: flex;
-    flex-wrap: nowrap; /* keep text and images on the same row */
-    gap: 2rem; /* space between text and images */
+    flex-wrap: nowrap;
+    gap: 2rem;
     width: 95vw;
     max-width: 1300px;
     margin: 0 auto;
@@ -370,8 +406,8 @@ header nav {
     justify-content: flex-start;
 }
 .share-text {
-    flex: 1 1 auto; /* lets text grow naturally */
-    max-width: 35%; /* slightly wider than before but not huge */
+    flex: 1 1 auto;
+    max-width: 35%;
     color: white;
 }
 .share-text h1 {
@@ -436,35 +472,25 @@ header nav {
     font-weight: 600;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .share-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .share-text,
-    .share-images {
-        flex: 1 1 100%;
-        max-width: 95%;
-    }
-
-    .share-images {
-        flex-direction: column;
-    }
-
-    .share-smaller-images {
-        flex-direction: row;
-    }
-
-    .small-image-wrapper img {
-        height: auto;
-        width: 48%;
-    }
+/* ---------------------------
+   SHARE IMAGES HOVER EFFECT
+----------------------------*/
+.share-images img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
+.share-big-image-wrapper img:hover {
+    transform: scaleX(-1) scale(1.03) rotate(-1deg);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+}
+
+.small-image-wrapper img:hover {
+    transform: scale(1.05) rotate(-0.5deg);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+}
 /* --------------------------------------------------
-   VOLUNTEER CAROUSEL
+   VOLUNTEER CAROUSEL SECTION
 -------------------------------------------------- */
 .volunteer-section {
     display: flex;
@@ -485,19 +511,23 @@ header nav {
 }
 
 .volunteer-carousel-wrapper {
-    position: relative; /* allow nav buttons outside */
+    position: relative;
     display: flex;
+    flex-direction: column; /* stack carousel + buttons */
     align-items: center;
+    width: 100%;
 }
 
 .eventSwiper {
     width: 100%;
+    overflow: visible; /* allow hover pop */
 }
 
 .swiper-slide .slide-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: visible; /* allow pop-out effect */
 }
 
 .eventSwiper .swiper-slide img {
@@ -507,6 +537,19 @@ header nav {
     object-position: center;
     border-radius: 10px;
     margin: 0 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.eventSwiper .swiper-slide img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.swiper-wrapper {
+    align-items: center;
 }
 
 .slide-text {
@@ -522,71 +565,65 @@ header nav {
     text-decoration: underline;
 }
 
-/* Navigation buttons outside */
+/* Navigation buttons BELOW carousel */
+.swiper-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
     background-color: rgba(0, 0, 0, 0.3);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
-.swiper-button-prev {
-    left: -60px; /* outside carousel */
-}
-
-.swiper-button-next {
-    right: -60px; /* outside carousel */
-}
-
-/* Responsive */
 @media (max-width: 1024px) {
     .eventSwiper .swiper-slide img {
-        width: 180px;
-        height: 140px;
-        margin: 0 8px;
+        width: 300px;
+        height: 225px;
     }
-    .swiper-button-prev {
-        left: -50px;
-    }
+    .swiper-button-prev,
     .swiper-button-next {
-        right: -50px;
+        width: 45px;
+        height: 45px;
     }
 }
 
 @media (max-width: 768px) {
     .eventSwiper .swiper-slide img {
-        width: 150px;
-        height: 120px;
-        margin: 0 6px;
+        width: 250px;
+        height: 180px;
     }
-    .swiper-button-prev {
-        left: -40px;
-    }
+    .swiper-button-prev,
     .swiper-button-next {
-        right: -40px;
+        width: 40px;
+        height: 40px;
     }
 }
 
 @media (max-width: 576px) {
     .eventSwiper .swiper-slide img {
-        width: 120px;
-        height: 100px;
-        margin: 0 4px;
+        width: 180px;
+        height: 130px;
     }
-    .swiper-button-prev {
-        left: -30px;
-    }
+    .swiper-button-prev,
     .swiper-button-next {
-        right: -30px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
     }
 }
-
 /* --------------------------------------------------
    VISIT SECTION
 -------------------------------------------------- */
@@ -803,53 +840,768 @@ header nav {
 }
 
 /* --------------------------------------------------
-   RESPONSIVE
+   RESPONSIVE MEDIA QUERIES
 -------------------------------------------------- */
-@media (max-width: 992px) {
-    .header {
-        width: 100%;
-        margin: 2rem;
-        padding: 1rem;
+
+/* Tablets and Small Laptops (768px - 1024px) */
+@media (max-width: 1024px) {
+    .header-and-hero {
+        border-radius: 30px;
+        margin: 0.5rem;
     }
 
-    .header-wrapper {
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
+    header .header-wrapper {
+        padding: 1rem 2rem;
+    }
+
+    .nav-btn {
+        min-width: 6rem;
+        min-height: 3.5rem;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+        max-width: 40rem;
+    }
+
+    .hero-service-container {
+        margin-top: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .countdown {
+        font-size: 1.2rem;
+    }
+
+    .image-crop {
+        width: 100%;
+        height: 300px;
+    }
+
+    .welcome-container {
+        width: 90vw;
+        margin-top: 3rem;
+    }
+
+    .welcome-text-intro-bold {
+        font-size: 1.6rem;
+    }
+
+    .welcome-text-description {
+        font-size: 1rem;
+    }
+
+    /* mission: allow wrap, reduce paddings */
+    .mission-section-container {
+        height: auto;
+        border-radius: 30px;
+        margin: 0.5rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .mission-h1 {
+        font-size: 2.5rem;
+    }
+
+    .cards {
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .card {
+        width: 22rem;
+        height: auto;
+    }
+
+    .card-h1 {
+        font-size: 1.8rem;
+    }
+
+    .h2-visit {
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+    }
+
+    .visit-container {
+        width: 70vw;
+    }
+
+    .share-section {
+        border-radius: 30px;
+        margin: 0.5rem;
+    }
+
+    .share-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .share-text-small {
+        font-size: 1rem;
+    }
+
+    .footer-section {
+        border-radius: 30px;
+        height: auto;
+        margin: 0.5rem;
+    }
+
+    .footer-container {
+        width: 90%;
+    }
+
+    .eventSwiper .swiper-slide img {
+        width: 250px;
+        height: 200px;
+        margin: 0 8px;
+    }
+
+    .swiper-button-prev {
+        left: -50px;
+    }
+
+    .swiper-button-next {
+        right: -50px;
+    }
+}
+
+/* -----------------------------------------
+   iPad-ish band (769px - 1024px)
+   — give cards a 2-column layout so 820px fits
+   and the image scales without overflow
+------------------------------------------*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mission-container {
+        padding: 0 1rem;
+    }
+
+    .cards {
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        justify-content: center;
+    }
+
+    /* try two columns where possible; third card wraps */
+    .card {
+        width: calc(50% - 1.25rem);
+        max-width: 22rem;
+    }
+
+    .father-container-img {
+        height: 300px;
+    }
+
+    .gospel-subtext {
+        font-size: 1rem;
+        max-width: 48%;
+    }
+
+    .mission-text-intro-bold {
+        max-width: 48%;
+    }
+
+    .gospel-space {
+        display: block;
+        width: 4%;
+    }
+}
+
+/* Mobile Landscape and Tablets (576px - 768px) */
+@media (max-width: 768px) {
+    .header-and-hero {
+        border-radius: 20px;
+        margin: 0.5rem;
+        padding-top: 1rem;
+    }
+
+    header .header-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    header .logo {
+        font-size: 1.2rem;
+    }
+
+    .btn-group {
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        min-width: 5rem;
+        min-height: 3rem;
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    header .right {
+        font-size: 0.9rem;
+    }
+
+    header .right svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hero-section {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding-top: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 90%;
+        padding: 0 1rem;
+    }
+
+    .square-button,
+    .square-button-secondary,
+    .square-button-alternate {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .hero-service-container {
+        flex-direction: column;
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .hero3 {
+        gap: 1rem;
+    }
+
+    .hero3 svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .image-crop {
+        width: 100%;
+        height: 250px;
+    }
+
+    .image-crop img {
+        object-position: center center;
+    }
+
+    .welcome-container {
+        width: 95vw;
+        margin-top: 2rem;
+    }
+
+    .welcome-text-cols {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .welcome-text-intro,
+    .welcome-text-description {
+        width: 100%;
+    }
+
+    .welcome-text-intro-bold {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+
+    .welcome-text-description {
+        font-size: 1rem;
+    }
+
+    /* mission adjustments for smaller tablets / phones in landscape */
+    .mission-section-container {
+        border-radius: 20px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .mission-container {
+        padding: 0 1rem;
+    }
+
+    .mission-cards-section {
+        padding-top: 3rem;
+    }
+
+    .mission-h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .gospel-subtext {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        max-width: 700px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        padding-bottom: 3rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 25rem;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .mission-bottom-section .d-flex {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+
+    .gospel-text-bold {
+        max-width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .mission-text-intro-bold {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .gospel-space {
+        display: none;
+    }
+
+    .father-container-img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+        max-width: 100%;
+    }
+
+    .visit-section {
+        height: auto;
+        min-height: 60vh;
+        padding: 3rem 1rem;
+    }
+
+    .visit-container {
+        width: 90vw;
+    }
+
+    .h2-visit {
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+    .volunteer-text-section {
+        width: 95%;
+    }
+
+    .volunteer-text-section h1 {
+        font-size: 2rem !important;
+    }
+
+    .volunteer-text-section p {
+        font-size: 1rem !important;
+    }
+
+    .volunteer-text-section img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .share-section {
+        border-radius: 20px;
+        padding: 2rem 1rem;
+    }
+
+    .share-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .share-text,
+    .share-images {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .share-text h1 {
         font-size: 2rem;
     }
+
+    .share-images {
+        flex-direction: column;
+        min-width: 100%;
+    }
+
+    .share-smaller-images {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .small-image-wrapper {
+        flex: 1;
+    }
+
+    .image-caption {
+        font-size: 1.2rem;
+    }
+
+    .footer-section {
+        border-radius: 20px;
+        padding: 2rem 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        width: 95%;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .footer1,
+    .footer2,
+    .footer3 {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        margin: 0;
+    }
+
+    .eventSwiper .swiper-slide img {
+        width: 200px;
+        height: 150px;
+        margin: 0 6px;
+    }
+
+    .swiper-button-prev {
+        left: -40px;
+    }
+
+    .swiper-button-next {
+        right: -40px;
+    }
+}
+
+/* Mobile Phones (up to 576px) */
+@media (max-width: 576px) {
+    .header-and-hero {
+        border-radius: 15px;
+        margin: 0.25rem;
+        padding-top: 0.5rem;
+    }
+
+    header .header-wrapper {
+        padding: 0.5rem;
+    }
+
+    header .left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    header .left svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    header .logo {
+        font-size: 1rem;
+    }
+
+    header .left small {
+        font-size: 0.7rem;
+    }
+
+    .btn-group {
+        border-radius: 2rem;
+        gap: 0.25rem;
+    }
+
+    .nav-btn {
+        min-width: 4rem;
+        min-height: 2.5rem;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.4rem;
+    }
+
+    header .right {
+        font-size: 0.75rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    header .right svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hero-content {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
     .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .square-button,
+    .square-button-secondary,
+    .square-button-alternate {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-service-container {
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+        font-size: 1.2rem;
+    }
+
+    .countdown {
+        font-size: 1rem;
+    }
+
+    .hero3 {
+        gap: 0.75rem;
+    }
+
+    .hero3 svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .image-crop {
+        height: 200px;
+    }
+
+    .welcome-container {
+        margin-top: 1.5rem;
+    }
+
+    .h4 {
+        font-size: 1rem;
+    }
+
+    .welcome-text-intro-bold {
+        font-size: 1.2rem;
+    }
+
+    .welcome-text-description {
+        font-size: 0.9rem;
+    }
+
+    .mission-section-container {
+        border-radius: 15px;
+        margin: 0.25rem;
+    }
+
+    .mission-h1 {
+        font-size: 1.6rem;
+    }
+
+    .gospel-subtext {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    .card {
+        padding: 1.25rem 1rem;
+    }
+
+    .card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card-h1 {
+        font-size: 1.4rem;
+    }
+
+    .card-p1 {
+        font-size: 0.95rem;
+    }
+
+    .card-p2 {
+        font-size: 1rem;
+    }
+
+    .mission-text-intro-bold {
+        font-size: 1.2rem;
+    }
+
+    .gospel-text-bold {
+        font-size: 1rem;
+    }
+
+    .father-container-img {
+        height: auto;
+    }
+
+    .h2-visit {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .volunteer-text-section h1 {
+        font-size: 1.5rem !important;
+    }
+
+    .volunteer-text-section p {
+        font-size: 0.9rem !important;
+    }
+
+    .volunteer-text-section img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .share-section {
+        border-radius: 15px;
+        margin: 0.25rem;
+    }
+
+    .share-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .share-text-small {
+        font-size: 0.9rem;
+    }
+
+    .image-caption {
+        font-size: 1rem;
+    }
+
+    .footer-section {
+        border-radius: 15px;
+        margin: 0.25rem;
+    }
+
+    .footer1 div h1 {
+        font-size: 1.2rem !important;
+    }
+
+    .footer1 div small {
+        font-size: 0.75rem !important;
+    }
+
+    .footer1 p {
+        font-size: 0.9rem !important;
+    }
+
+    .footer1-socials svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .footer2 button,
+    .footer3 {
+        font-size: 0.9rem;
+    }
+
+    .footer-text-bold {
+        font-size: 1rem;
+    }
+
+    .footer-col1 p,
+    .footer-col2 p {
+        font-size: 0.9rem;
+    }
+
+    .footer4 {
+        font-size: 0.8rem;
+    }
+
+    .eventSwiper .swiper-slide img {
+        width: 140px;
+        height: 110px;
+        margin: 0 4px;
+    }
+
+    .slide-text {
+        font-size: 0.85rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 35px;
+        height: 35px;
+    }
+
+    .swiper-button-prev {
+        left: -25px;
+    }
+
+    .swiper-button-next {
+        right: -25px;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
         font-size: 1rem;
     }
 }
 
-@media (max-width: 576px) {
-    .header {
-        width: 100%;
-        margin: 2rem;
-        padding: 1rem;
-    }
-
-    .header-wrapper {
-        width: 100%;
-        padding: 1rem;
-        flex-direction: column;
-    }
-
+/* Extra Small Phones (up to 375px) */
+@media (max-width: 375px) {
     .hero-title {
         font-size: 1.5rem;
     }
+
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
-    .square-button,
-    .square-button-secondary {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
+    .nav-btn {
+        min-width: 3.5rem;
+        min-height: 2rem;
+        font-size: 0.6rem;
+    }
+
+    .mission-h1 {
+        font-size: 1.4rem;
+    }
+
+    .h2-visit {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+    }
+
+    .eventSwiper .swiper-slide img {
+        width: 110px;
+        height: 90px;
+    }
+
+    .swiper-button-prev {
+        left: -20px;
+    }
+
+    .swiper-button-next {
+        right: -20px;
     }
 }
