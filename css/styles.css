@@ -236,7 +236,6 @@ header nav {
 }
 
 .mission-container {
-    border: 1px solid blue; /* for testing/alignment */
     width: 95vw; /* fills most of the viewport */
     max-width: 1300px; /* optional, keeps it from getting too wide */
     display: flex;
@@ -289,13 +288,11 @@ header nav {
     width: 48%;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9); /* whitish, 70% opacity */
-    border: 1px solid red;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 .gospel-text-basic {
     display: flex;
     justify-content: flex-end;
-    border: 1px solid green;
 }
 
 .mission-h1 {
@@ -309,7 +306,6 @@ header nav {
     padding-bottom: 6rem;
     display: flex;
     gap: 3rem;
-    border: 1px solid green;
 }
 .card {
     background-color: white;
@@ -345,6 +341,73 @@ header nav {
     font-size: 1.2rem;
     font-weight: 700;
     color: #eb3300;
+}
+
+.share-section {
+    background-color: #2e2320;
+    padding-top: 3rem;
+    position: relative;
+    padding-bottom: 3rem;
+    border-radius: 50px;
+    margin: 1rem;
+    height: 35rem;
+}
+.share-big-image {
+    border: 1px solid green;
+    width: 100%;
+}
+
+.share-smaller-image {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.share-container {
+    width: 95vw; /* fills most of the viewport */
+    max-width: 1300px; /* optional, keeps it from getting too wide */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* center the container */
+    padding: 0 2rem; /* optional padding inside */
+}
+.share-text {
+    width: 100%;
+}
+
+.volunteer-text-section {
+    width: 25%;
+    text-align: center;
+}
+.volunteer-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portraitCarousel .carousel-item img {
+    height: 400px; /* Portrait height */
+    width: auto;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#portraitCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    bottom: -50px; /* text below the image */
+}
+
+#portraitCarousel .carousel-control-prev-icon,
+#portraitCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent circle */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 .visit-container {
@@ -471,10 +534,10 @@ header nav {
 }
 
 .square-button:hover {
-    color: red;
+    color: #eb3300;
 }
 .square-button-secondary:hover {
-    color: red;
+    color: #eb3300;
 }
 
 /* Responsive */

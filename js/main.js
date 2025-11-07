@@ -244,4 +244,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // =============================== CAROSEUL
+    const carouselInner = document.getElementById("carouselInner");
+    if (!carouselInner) return; // exit if carousel not on page
+
+    const imageCount = 5; // number of images in assets/caro/
+
+    for (let i = 1; i <= imageCount; i++) {
+        const div = document.createElement("div");
+        div.classList.add("carousel-item");
+        if (i === 1) div.classList.add("active"); // first image active
+        div.innerHTML = `
+      <img src="assets/caro/image${i}.png" class="d-block mx-auto" alt="Image ${i}">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Image ${i}</h5>
+        <p>Description for image ${i}</p>
+      </div>
+    `;
+        carouselInner.appendChild(div);
+    }
 });
