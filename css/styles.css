@@ -370,14 +370,18 @@ header nav {
     align-items: center;
     justify-content: center;
     margin: 0 auto; /* center the container */
-    padding: 0 2rem; /* optional padding inside */
+    padding: 2rem 2rem; /* optional padding inside */
 }
 .share-text {
-    width: 100%;
+    width: 90%;
+}
+
+.share-text-small {
+    width: 85%;
 }
 
 .volunteer-text-section {
-    width: 25%;
+    width: 80%;
     text-align: center;
 }
 .volunteer-section {
@@ -513,7 +517,8 @@ header nav {
 }
 
 .square-button,
-.square-button-secondary {
+.square-button-secondary,
+.square-button-alternate {
     padding: 0.75rem 2rem;
     font-size: 1.5rem;
     border-radius: 10px;
@@ -521,6 +526,15 @@ header nav {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+}
+
+.square-button-alternate {
+    background: #eb3300;
+    color: white;
+}
+.square-button-alternate:hover {
+    background: #e7542b;
+    color: white;
 }
 
 .square-button {
@@ -537,6 +551,48 @@ header nav {
     color: #eb3300;
 }
 .square-button-secondary:hover {
+    color: #eb3300;
+}
+
+.footer-section {
+    background-color: white;
+    padding-top: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 3rem;
+    border-radius: 50px;
+    margin: 1rem;
+    height: 35rem;
+    /* border: 1px solid #e0e0e0; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.footer-container {
+    width: 75%; /* fills most of the viewport */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto; /* center the container */
+    padding: 2rem 2rem; /* optional padding inside */
+}
+
+.footer1,
+.footer2,
+.footer3 {
+    background-color: #f0f0f0;
+    display: flex;
+    width: 33%;
+    height: 200px;
+    margin: 0 1rem;
+    border-radius: 1rem;
+}
+
+.footer1 {
+    text-align: left;
+}
+
+.footer4 {
     color: #eb3300;
 }
 

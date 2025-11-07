@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const buttonsSquare = document.querySelectorAll(
-        ".square-button, .square-button-secondary"
+        ".square-button, .square-button-secondary, .square-button-alternate"
     );
 
     buttonsSquare.forEach((button) => {
