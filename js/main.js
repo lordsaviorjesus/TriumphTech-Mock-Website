@@ -154,8 +154,31 @@ document.addEventListener("DOMContentLoaded", function () {
         // lastScrollTop = scrollTop;
     });
 
+    const iconSize = "25px";
+    const iconColor = "#ff0000";
+
+    const icons = document.querySelectorAll(".icon");
+    icons.forEach((icon) => {
+        icon.style.width = iconSize;
+        icon.style.height = iconSize;
+        icon.style.fill = iconColor;
+    });
+
     const navButtons = document.querySelectorAll(".nav-btn");
+    navButtons[0].classList.add("active");
+
     navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Remove active from all
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Trigger click animation
+            button.classList.remove("click-animate"); // reset if still applied
+            void button.offsetWidth; // force reflow to restart animation
+            button.classList.add("click-animate");
+        });
+
         button.addEventListener("mouseenter", function () {
             this.style.transform = "translateY(-2px)";
         });
@@ -163,6 +186,21 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("mouseleave", function () {
             this.style.transform = "translateY(0)";
         });
+    });
+
+    const buttonsSquare = document.querySelectorAll(
+        ".square-button, .square-button-secondary"
+    );
+
+    buttonsSquare.forEach((button) => {
+        button.addEventListener(
+            "mouseenter",
+            () => (button.style.transform = "translateY(-2px)")
+        );
+        button.addEventListener(
+            "mouseleave",
+            () => (button.style.transform = "translateY(0)")
+        );
     });
 
     // ===============================

@@ -90,7 +90,6 @@
             <section
                 class="hero-section text-center d-flex align-items-center justify-content-center"
             >
-                <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1 class="hero-title">We’re Glad You’re Here</h1>
                     <p class="hero-subtitle">
@@ -103,92 +102,194 @@
                             About Us
                         </button>
                     </div>
-                    <h2 class="hero-service">Next Service Starts In:</h2>
-                    <div id="countdown" class="countdown"></div>
+
+                    <div class="hero-service-container">
+                        <div class="hero1"></div>
+                        <div class="hero2">
+                            <h2 class="hero-service">
+                                Next Service Starts In:
+                            </h2>
+                            <div id="countdown" class="countdown"></div>
+                        </div>
+                        <div class="hero3">
+                            <svg
+                                class="icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"
+                                />
+                            </svg>
+                            <svg
+                                class="icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M17.316 6.246q.011.244.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.58 7.58 0 0 0 5.588-1.562a3.78 3.78 0 0 1-3.526-2.621a3.86 3.86 0 0 0 1.705-.065a3.78 3.78 0 0 1-3.028-3.703v-.047a3.8 3.8 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.72 10.72 0 0 0 7.781 3.945a3.8 3.8 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.6 7.6 0 0 0 2.397-.916a3.8 3.8 0 0 1-1.66 2.088a7.6 7.6 0 0 0 2.168-.594a7.6 7.6 0 0 1-1.884 1.953"
+                                />
+                            </svg>
+                            <svg
+                                class="icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"
+                                />
+                            </svg>
+                            <svg
+                                class="icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2M1 19V6h4v13zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7z"
+                                />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
 
         <!-- Welcome Section -->
-        <section class="welcome-section py-5">
-            <div class="container text-center">
-                <h2 class="section-title mb-4">Welcome Home</h2>
-                <img
-                    src="https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=600"
-                    class="welcome-image mb-4 rounded shadow"
-                    alt="Welcome"
-                />
-                <p class="welcome-text mx-auto">
-                    We are a vibrant community dedicated to fostering spiritual
-                    growth, meaningful connections, and positive change. Whether
-                    you're seeking guidance, fellowship, or a place to belong,
-                    you'll find a warm welcome here. Join us as we journey
-                    together in faith, hope, and love.
-                </p>
-            </div>
-        </section>
+        <section
+            class="welcome-section d-flex align-items-center justify-content-center"
+            style="margin-bottom: 8rem"
+        >
+            <div class="welcome-container">
+                <h4 class="h4">WELCOME TO ROCK SOLID</h4>
 
-        <!-- Mission Section -->
-        <section class="mission-section py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Our Mission</h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div
-                            class="mission-card text-center p-4 rounded shadow"
-                        >
-                            <div class="card-icon mb-3">❤️</div>
-                            <h3 class="card-title">Love & Compassion</h3>
-                            <p class="card-text">
-                                We believe in spreading love and compassion to
-                                every person we meet, creating a culture of
-                                kindness and understanding that transforms
-                                lives.
-                            </p>
-                        </div>
+                <div class="welcome-text-cols">
+                    <div class="welcome-text-intro">
+                        <p class="welcome-text-intro-bold">
+                            Following the Holy Spirit, we exist to create a
+                            movement of disciple-making disciples.
+                        </p>
                     </div>
-                    <div class="col-md-4">
-                        <div
-                            class="mission-card text-center p-4 rounded shadow"
-                        >
-                            <div class="card-icon mb-3">🤝</div>
-                            <h3 class="card-title">Community Building</h3>
-                            <p class="card-text">
-                                Together we grow stronger. We're committed to
-                                building authentic relationships and fostering a
-                                supportive community where everyone belongs.
-                            </p>
-                        </div>
+
+                    <div class="welcome-text-description">
+                        <p>
+                            Rock Solid Church is committed to creating a
+                            movement of disciple-making disciples—men and women
+                            who reflect the diversity of our community, lived
+                            out in authentic unity.
+                        </p>
                     </div>
-                    <div class="col-md-4">
-                        <div
-                            class="mission-card text-center p-4 rounded shadow"
-                        >
-                            <div class="card-icon mb-3">🌱</div>
-                            <h3 class="card-title">Spiritual Growth</h3>
-                            <p class="card-text">
-                                We're dedicated to nurturing spiritual
-                                development through teaching, mentorship, and
-                                shared experiences that deepen faith and
-                                purpose.
-                            </p>
-                        </div>
-                    </div>
+                </div>
+
+                <div class="image-crop">
+                    <img src="./assets/welcome.png" alt="Welcome Image" />
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section py-5 text-center">
-            <div class="container">
-                <h2 class="cta-title mb-3">Ready to Take the Next Step?</h2>
-                <p class="cta-text mb-4">
-                    Experience the warmth of our community and discover your
-                    purpose. Your journey starts here.
-                </p>
-                <button class="btn btn-light btn-lg cta-btn">
-                    Join Us Today
-                </button>
+        <!-- Mission Section -->
+        <section class="mission-section-container">
+            <div class="mission-container">
+                <div class="mission-cards-section">
+                    <h1 class="mission-h1">Our Mission is Simple</h1>
+                    <p class="gospel-subtext">
+                        <strong>The gospel is the good news of Jesus: </strong
+                        >That Jesus lived a sinless life in my place, died the
+                        death that...
+                    </p>
+                    <p></p>
+                    <div class="cards">
+                        <div class="card">
+                            <img
+                                src="./assets/yt_svg.svg"
+                                width="100"
+                                height="100"
+                            />
+                            <h1 class="card-h1">Watch a Message</h1>
+                            <p class="card-p1">
+                                Catch up on the latest and past weekend service
+                                messages anytime, anywhere.
+                            </p>
+                            <p class="card-p2">Catch Our Latest Message</p>
+                        </div>
+                        <div class="card">
+                            <img
+                                src="./assets/map_svg.svg"
+                                width="100"
+                                height="100"
+                            />
+                            <h1 class="card-h1">Find a Location</h1>
+                            <p class="card-p1">
+                                Easily find a campus near you. Join us in person
+                                and get connected.
+                            </p>
+                            <p class="card-p2">Search Our Campuses</p>
+                        </div>
+                        <div class="card">
+                            <img
+                                src="./assets/arrow_svg.svg"
+                                width="100"
+                                height="100"
+                            />
+                            <h1 class="card-h1">Get Connected</h1>
+                            <p class="card-p1">
+                                Stay connected and in the loop—sign up for
+                                updates, events, and ways to get involved.
+                            </p>
+                            <p class="card-p2">Contact Us</p>
+                        </div>
+                    </div>
+                    <div class="mission-bottom-section">
+                        <p class="gospel-text-bold">GOSPEL</p>
+                        <div class="d-flex flex-row">
+                            <p class="mission-text-intro-bold">
+                                The gospel is what should characterize us. It
+                                should be our identity: We are a gospel people.
+                            </p>
+                            <p class="gospel-space"></p>
+                            <p class="gospel-subtext">
+                                <strong
+                                    >The gospel is the good news of
+                                    Jesus:</strong
+                                >
+                                That Jesus lived a sinless life in my place,
+                                died the death that I deserved, and rose to life
+                                again. And whoever believes in him has eternal
+                                life.
+                            </p>
+                        </div>
+                    </div>
+                    <img
+                        class="father-container-img"
+                        src="./assets/fathers.png"
+                        alt="Mission Bottom Image"
+                    />
+                </div>
+            </div>
+        </section>
+
+        <!-- visit Section -->
+        <section class="visit-section">
+            <div class="visit-container">
+                <h2 class="h2-visit">
+                    ROCK SOLID CHURCH CONTINUES TO HOLD OUT
+                    <span class="love-word">LOVE</span
+                    ><span class="after-love">
+                        AND HOPE TO THE ENTIRE WORLD.</span
+                    >
+                </h2>
+                <button class="square-button-secondary">Plan A Visit</button>
             </div>
         </section>
 
