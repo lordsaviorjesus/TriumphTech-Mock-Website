@@ -1,0 +1,223 @@
+/* Main Font - Inter */
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Variables */
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --secondary-color: #64748b;
+    --text-light: #f0f0f0;
+    --bg-light: #f8fafc;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header-and-hero {
+    padding-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 1rem;
+    background: url("../assets/main_bg.png") center/cover no-repeat;
+}
+
+header {
+    background: transparent;
+}
+
+.hero-service {
+    margin-top: 6rem;
+}
+
+header .header-wrapper {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 5rem;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+header .left,
+header .right {
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex: 1; /* takes all space between left & right */
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-group {
+    /* flex-direction: column; */
+
+    background-color: rgba(74, 66, 64, 0.5); /* semi-transparent */
+    backdrop-filter: blur(10px); /* blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    border-radius: 4rem;
+    display: flex;
+}
+
+.nav-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4rem;
+    transition: all 0.3s ease;
+    min-width: 7rem;
+    min-height: 4.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.nav-btn:hover {
+    background: rgba(102, 98, 98, 0.7);
+    color: white;
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* background: rgba(0, 0, 0, 0.4); */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    max-width: 52rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.square-button,
+.square-button-secondary {
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.square-button {
+    background: white;
+    color: black;
+}
+
+.square-button-secondary {
+    background: #6a5c61;
+    color: white;
+}
+
+.square-button:hover {
+    color: red;
+}
+.square-button-secondary:hover {
+    color: red;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .header {
+        width: 100%;
+        margin: 2rem;
+        padding: 1rem 1rem;
+    }
+    .header-wrapper {
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    header nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        width: 100%;
+        margin: 2rem;
+        padding: 1rem 1rem;
+    }
+    .header-wrapper {
+        width: 100%;
+        padding: 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .square-button,
+    .square-button-secondary {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+}

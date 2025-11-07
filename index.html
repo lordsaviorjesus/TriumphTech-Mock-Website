@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Triumph Mockup</title>
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Swiper CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div class="header-and-hero">
+            <!-- Header -->
+            <header class="py-2">
+                <div class="header-wrapper">
+                    <!-- Left: Logo -->
+                    <div class="left d-flex align-items-center gap-2">
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6.516,2.612L9.325,3.55l0.734,2.934l0.188,0.75l0.644,0.428l2.238,1.494L13.734,14H2.441l0.331-1.65l1.125-0.562 l0.875-0.438l0.191-0.959L6.516,2.612 M5,0L3,10l-2,1l-1,5h16l-1-8l-3-2l-1-4L5,0L5,0z"
+                                fill="white"
+                            />
+                        </svg>
+                        <div>
+                            <h1 class="logo m-0">ROCK SOLID</h1>
+                            <small class="text-white">CHRISTIAN CHURCH</small>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap Button Group Navigation -->
+                    <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Navigation Buttons"
+                    >
+                        <button type="button" class="nav-btn">
+                            Plan A Visit
+                        </button>
+                        <button type="button" class="nav-btn">
+                            Who We Are
+                        </button>
+                        <button type="button" class="nav-btn">Connect</button>
+                        <button type="button" class="nav-btn">
+                            Ministries
+                        </button>
+                        <button type="button" class="nav-btn">Events</button>
+                        <button type="button" class="nav-btn">Media</button>
+                        <button type="button" class="nav-btn">
+                            Give Online
+                        </button>
+                        <button type="button" class="nav-btn">|||</button>
+                    </div>
+
+                    <!-- Right: Create Account -->
+                    <div class="right d-flex align-items-center gap-1">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="white"
+                        >
+                            <path
+                                d="M12 11.385q-1.237 0-2.119-.882T9 8.385t.881-2.12T12 5.386t2.119.88t.881 2.12t-.881 2.118t-2.119.882m-7 7.23V16.97q0-.619.36-1.158q.361-.54.97-.838q1.416-.679 2.834-1.018q1.417-.34 2.836-.34t2.837.34t2.832 1.018q.61.298.97.838q.361.539.361 1.158v1.646zm1-1h12v-.646q0-.332-.215-.625q-.214-.292-.593-.494q-1.234-.598-2.546-.916T12 14.616t-2.646.318t-2.546.916q-.38.202-.593.494Q6 16.637 6 16.97zm6-7.23q.825 0 1.413-.588T14 8.384t-.587-1.412T12 6.384t-1.412.588T10 8.384t.588 1.413t1.412.587m0 7.232"
+                            />
+                        </svg>
+                        <a href="#" class="text-white">Create Account</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section
+                class="hero-section text-center d-flex align-items-center justify-content-center"
+            >
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">We’re Glad You’re Here</h1>
+                    <p class="hero-subtitle">
+                        We are a thriving and diverse community of real people
+                        experiencing real life together.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <button class="square-button">Plan A Visit</button>
+                        <button class="square-button-secondary">
+                            About Us
+                        </button>
+                    </div>
+                    <h2 class="hero-service">Next Service Starts In:</h2>
+                    <div id="countdown" class="countdown"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section py-5">
+            <div class="container text-center">
+                <h2 class="section-title mb-4">Welcome Home</h2>
+                <img
+                    src="https://images.pexels.com/photos/1309766/pexels-photo-1309766.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    class="welcome-image mb-4 rounded shadow"
+                    alt="Welcome"
+                />
+                <p class="welcome-text mx-auto">
+                    We are a vibrant community dedicated to fostering spiritual
+                    growth, meaningful connections, and positive change. Whether
+                    you're seeking guidance, fellowship, or a place to belong,
+                    you'll find a warm welcome here. Join us as we journey
+                    together in faith, hope, and love.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Our Mission</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div
+                            class="mission-card text-center p-4 rounded shadow"
+                        >
+                            <div class="card-icon mb-3">❤️</div>
+                            <h3 class="card-title">Love & Compassion</h3>
+                            <p class="card-text">
+                                We believe in spreading love and compassion to
+                                every person we meet, creating a culture of
+                                kindness and understanding that transforms
+                                lives.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div
+                            class="mission-card text-center p-4 rounded shadow"
+                        >
+                            <div class="card-icon mb-3">🤝</div>
+                            <h3 class="card-title">Community Building</h3>
+                            <p class="card-text">
+                                Together we grow stronger. We're committed to
+                                building authentic relationships and fostering a
+                                supportive community where everyone belongs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div
+                            class="mission-card text-center p-4 rounded shadow"
+                        >
+                            <div class="card-icon mb-3">🌱</div>
+                            <h3 class="card-title">Spiritual Growth</h3>
+                            <p class="card-text">
+                                We're dedicated to nurturing spiritual
+                                development through teaching, mentorship, and
+                                shared experiences that deepen faith and
+                                purpose.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section py-5 text-center">
+            <div class="container">
+                <h2 class="cta-title mb-3">Ready to Take the Next Step?</h2>
+                <p class="cta-text mb-4">
+                    Experience the warmth of our community and discover your
+                    purpose. Your journey starts here.
+                </p>
+                <button class="btn btn-light btn-lg cta-btn">
+                    Join Us Today
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-section py-5 text-white bg-dark">
+            <div class="container text-center text-md-start">
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <h5 class="footer-title">Triumph</h5>
+                        <p>Building faith, community, and hope since 2010.</p>
+                        <p>
+                            <strong>Phone:</strong> (555) 123-4567<br /><strong
+                                >Email:</strong
+                            >
+                            info@triumph.org
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Ministries</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Donate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-title">Resources</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Sermons</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Prayer Requests</a></li>
+                            <li><a href="#">Volunteer</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h5 class="footer-title">Connect With Us</h5>
+                        <div
+                            class="d-flex gap-2 mb-2 justify-content-center justify-content-md-start"
+                        >
+                            <a
+                                href="#"
+                                class="btn btn-outline-light btn-sm rounded-circle"
+                                >FB</a
+                            >
+                            <a
+                                href="#"
+                                class="btn btn-outline-light btn-sm rounded-circle"
+                                >TW</a
+                            >
+                            <a
+                                href="#"
+                                class="btn btn-outline-light btn-sm rounded-circle"
+                                >IG</a
+                            >
+                            <a
+                                href="#"
+                                class="btn btn-outline-light btn-sm rounded-circle"
+                                >LN</a
+                            >
+                        </div>
+                        <a href="#" class="btn btn-outline-light btn-sm"
+                            >Member Login</a
+                        >
+                    </div>
+                </div>
+                <hr class="my-4 bg-light" />
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between"
+                >
+                    <p>&copy; 2025 Triumph Mockup. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex gap-3">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
