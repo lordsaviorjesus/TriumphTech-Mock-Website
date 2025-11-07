@@ -16,27 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
             prevEl: ".swiper-button-prev",
         },
         breakpoints: {
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
         },
     });
 
-    const observerOptions = {
-        root: null,
-        threshold: 0.1,
-        rootMargin: "0px",
-    };
-
+    const observerOptions = { root: null, threshold: 0.1, rootMargin: "0px" };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -49,16 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(
         ".welcome-section, .mission-section, .summary-section, .story-section"
     );
-    sections.forEach((section) => {
-        observer.observe(section);
-    });
+    sections.forEach((section) => observer.observe(section));
 
     const missionCards = document.querySelectorAll(".mission-card");
     missionCards.forEach((card, index) => {
         setTimeout(() => {
             card.style.opacity = "0";
             card.style.transform = "translateY(30px)";
-
             const cardObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -71,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
             }, observerOptions);
-
             cardObserver.observe(card);
         }, 0);
     });
@@ -80,13 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     clickableImages.forEach((image) => {
         image.addEventListener("click", function (e) {
             e.preventDefault();
-
             this.style.transition = "transform 0.3s ease";
             this.style.transform = "scale(0.95)";
-
-            setTimeout(() => {
-                this.style.transform = "scale(1)";
-            }, 150);
+            setTimeout(() => (this.style.transform = "scale(1)"), 150);
         });
     });
 
@@ -96,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
     buttons.forEach((button) => {
         button.addEventListener("click", function (e) {
             e.preventDefault();
-
             const ripple = document.createElement("span");
             ripple.style.position = "absolute";
             ripple.style.borderRadius = "50%";
@@ -106,93 +83,54 @@ document.addEventListener("DOMContentLoaded", function () {
             ripple.style.transform = "scale(0)";
             ripple.style.animation = "ripple 0.6s ease-out";
             ripple.style.pointerEvents = "none";
-
             const rect = this.getBoundingClientRect();
             ripple.style.left = e.clientX - rect.left - 50 + "px";
             ripple.style.top = e.clientY - rect.top - 50 + "px";
-
             this.style.position = "relative";
             this.style.overflow = "hidden";
             this.appendChild(ripple);
-
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+            setTimeout(() => ripple.remove(), 600);
         });
     });
 
     const style = document.createElement("style");
     style.textContent = `
         @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
+            to { transform: scale(4); opacity: 0; }
         }
     `;
     document.head.appendChild(style);
 
-    let lastScrollTop = 0;
-    const header = document.querySelector("header");
-
     window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        header.style.boxShadow = "none"; // always
-
-        // const scrollTop =
-        //     window.pageYOffset || document.documentElement.scrollTop;
-        // if (scrollTop > lastScrollTop && scrollTop > 100) {
-        //     header.style.transform = "translateY(-100%)";
-        // } else {
-        //     header.style.transform = "translateY(0)";
-        // }
-        // if (scrollTop > 50) {
-        //     header.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.1)";
-        // } else {
-        //     header.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.05)";
-        // }
-        // lastScrollTop = scrollTop;
+        document.querySelector("header").style.boxShadow = "none";
     });
 
-    const iconSize = "25px";
-    const iconColor = "#ff0000";
-
-    const icons = document.querySelectorAll(".icon");
-    icons.forEach((icon) => {
+    const iconSize = "25px",
+        iconColor = "#ff0000";
+    document.querySelectorAll(".icon").forEach((icon) => {
         icon.style.width = iconSize;
         icon.style.height = iconSize;
         icon.style.fill = iconColor;
     });
 
-    const navButtons = document.querySelectorAll(".nav-btn");
-    navButtons[0].classList.add("active");
-
-    navButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            // Remove active from all
-            navButtons.forEach((btn) => btn.classList.remove("active"));
-            button.classList.add("active");
-
-            // Trigger click animation
-            button.classList.remove("click-animate"); // reset if still applied
-            void button.offsetWidth; // force reflow to restart animation
-            button.classList.add("click-animate");
-        });
-
-        button.addEventListener("mouseenter", function () {
-            this.style.transform = "translateY(-2px)";
-        });
-
-        button.addEventListener("mouseleave", function () {
-            this.style.transform = "translateY(0)";
-        });
+    const iconSize2 = "35px",
+        iconColor2 = "black";
+    document.querySelectorAll(".icon2").forEach((icon) => {
+        icon.style.width = iconSize2;
+        icon.style.height = iconSize2;
+        icon.style.fill = iconColor2;
     });
 
-    const buttonsSquare = document.querySelectorAll(
-        ".square-button, .square-button-secondary, .square-button-alternate"
-    );
-
-    buttonsSquare.forEach((button) => {
+    const navButtons = document.querySelectorAll(".nav-btn");
+    navButtons[0].classList.add("active");
+    navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+            button.classList.remove("click-animate");
+            void button.offsetWidth;
+            button.classList.add("click-animate");
+        });
         button.addEventListener(
             "mouseenter",
             () => (button.style.transform = "translateY(-2px)")
@@ -203,65 +141,70 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     });
 
-    // ===============================
-    // Countdown Timer for Sunday 9-11 AM
-    // ===============================
+    document
+        .querySelectorAll(
+            ".square-button, .square-button-secondary, .square-button-alternate"
+        )
+        .forEach((button) => {
+            button.addEventListener(
+                "mouseenter",
+                () => (button.style.transform = "translateY(-2px)")
+            );
+            button.addEventListener(
+                "mouseleave",
+                () => (button.style.transform = "translateY(0)")
+            );
+        });
+
+    // =============================== COUNTDOWN
     function updateCountdown() {
         const now = new Date();
-
         const sunday = new Date(now);
         sunday.setDate(now.getDate() - now.getDay());
         sunday.setHours(9, 0, 0, 0);
-
         const sundayEnd = new Date(sunday);
         sundayEnd.setHours(11, 0, 0, 0);
-
-        if (now > sundayEnd) {
-            sunday.setDate(sunday.getDate() + 7);
-        }
-
+        if (now > sundayEnd) sunday.setDate(sunday.getDate() + 7);
         if (now >= sunday && now <= sundayEnd) {
             document.getElementById("countdown").textContent = "In session!";
             return;
         }
-
         let diff = sunday - now;
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         diff -= days * (1000 * 60 * 60 * 24);
-
         const hours = Math.floor(diff / (1000 * 60 * 60));
         diff -= hours * (1000 * 60 * 60);
-
         const minutes = Math.floor(diff / (1000 * 60));
         diff -= minutes * (1000 * 60);
-
         const seconds = Math.floor(diff / 1000);
-
         document.getElementById(
             "countdown"
         ).textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
-
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // =============================== CAROSEUL
-    const carouselInner = document.getElementById("carouselInner");
-    if (!carouselInner) return; // exit if carousel not on page
-
-    const imageCount = 5; // number of images in assets/caro/
-
-    for (let i = 1; i <= imageCount; i++) {
-        const div = document.createElement("div");
-        div.classList.add("carousel-item");
-        if (i === 1) div.classList.add("active"); // first image active
-        div.innerHTML = `
-      <img src="assets/caro/image${i}.png" class="d-block mx-auto" alt="Image ${i}">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Image ${i}</h5>
-        <p>Description for image ${i}</p>
-      </div>
-    `;
-        carouselInner.appendChild(div);
-    }
+    // =============================== MULTI-ITEM CAROUSEL
+    document.addEventListener("DOMContentLoaded", function () {
+        const volunteerSwiper = new Swiper(".eventSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            loop: true,
+            slidesPerGroup: 1,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1024: { slidesPerView: 5, slidesPerGroup: 1 },
+                768: { slidesPerView: 3, slidesPerGroup: 1 },
+                640: { slidesPerView: 2, slidesPerGroup: 1 },
+                0: { slidesPerView: 1, slidesPerGroup: 1 },
+            },
+        });
+    });
 });

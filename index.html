@@ -312,36 +312,71 @@
                     and connect with a vibrant community!
                 </p>
             </div>
-            <div class="container my-5">
-                <div
-                    id="portraitCarousel"
-                    class="carousel slide"
-                    data-bs-ride="carousel"
-                    data-bs-interval="3000"
-                >
-                    <div class="carousel-inner text-center" id="carouselInner">
-                        <!-- Items will be added by JS -->
-                    </div>
 
-                    <!-- Arrows -->
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#portraitCarousel"
-                        data-bs-slide="prev"
-                    >
-                        <span class="carousel-control-prev-icon"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#portraitCarousel"
-                        data-bs-slide="next"
-                    >
-                        <span class="carousel-control-next-icon"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+            <div class="volunteer-carousel-wrapper container my-5">
+                <!-- Navigation buttons outside carousel -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- Swiper -->
+                <div class="swiper eventSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slides with text below -->
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image1.png"
+                                    alt="Image 1"
+                                />
+                                <a href="#" class="slide-text">Volunteer 1</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image2.png"
+                                    alt="Image 2"
+                                />
+                                <a href="#" class="slide-text">Volunteer 2</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image3.png"
+                                    alt="Image 3"
+                                />
+                                <a href="#" class="slide-text">Volunteer 3</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image4.png"
+                                    alt="Image 4"
+                                />
+                                <a href="#" class="slide-text">Volunteer 4</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image5.png"
+                                    alt="Image 5"
+                                />
+                                <a href="#" class="slide-text">Volunteer 5</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img
+                                    src="assets/caro/image6.png"
+                                    alt="Image 6"
+                                />
+                                <a href="#" class="slide-text">Volunteer 6</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -349,20 +384,8 @@
         <section class="share-section">
             <div class="share-container">
                 <div class="share-text">
-                    <h1
-                        style="
-                            font-weight: 700;
-                            font-size: 3rem;
-                            letter-spacing: 1px;
-                            color: white;
-                        "
-                    >
-                        Saved Lives Are Changed Lives.
-                    </h1>
-                    <p
-                        style="font-size: 1.2rem; color: white"
-                        class="share-text-small"
-                    >
+                    <h1>Saved Lives Are Changed Lives.</h1>
+                    <p class="share-text-small">
                         Feature stories about how Rock Solid Church is making a
                         difference in our city.
                     </p>
@@ -370,8 +393,43 @@
                         Share Your Story
                     </button>
                 </div>
-                <div class="share-big-image"></div>
-                <div class="share-smaller-image"></div>
+
+                <div class="share-images">
+                    <div class="share-big-image-wrapper">
+                        <img
+                            src="./assets/share/image2.png"
+                            alt="Share Image"
+                        />
+                        <p
+                            class="image-caption"
+                            style="
+                                color: white;
+                                font-size: 1.5rem;
+                                text-align: left;
+                                font-weight: 600;
+                            "
+                        >
+                            <u>Joshua's Road to Peace</u>
+                        </p>
+                    </div>
+
+                    <div class="share-smaller-images">
+                        <div class="small-image-wrapper">
+                            <img
+                                src="./assets/share/image1.png"
+                                alt="Small Share Image"
+                            />
+                            <p class="image-caption">By Any Means Necessary</p>
+                        </div>
+                        <div class="small-image-wrapper">
+                            <img
+                                src="./assets/share/image0.png"
+                                alt="Small Share Image"
+                            />
+                            <p class="image-caption">Holding on to Hope</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -379,24 +437,154 @@
         <footer class="footer-section">
             <div class="footer-container">
                 <div class="footer1">
-                    <svg
-                        width="40"
-                        height="40"
-                        viewBox="0 0 16 16"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <div
+                        style="
+                            display: flex;
+                            gap: 0.75rem;
+                            padding-bottom: 2rem;
+                        "
                     >
-                        <path
-                            d="M6.516,2.612L9.325,3.55l0.734,2.934l0.188,0.75l0.644,0.428l2.238,1.494L13.734,14H2.441l0.331-1.65l1.125-0.562 l0.875-0.438l0.191-0.959L6.516,2.612 M5,0L3,10l-2,1l-1,5h16l-1-8l-3-2l-1-4L5,0L5,0z"
-                            fill="black"
-                        />
-                    </svg>
-                    <div>
-                        <h1 class="logo m-0">ROCK SOLID</h1>
-                        <small class="text-white">CHRISTIAN CHURCH</small>
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 16 16"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6.516,2.612L9.325,3.55l0.734,2.934l0.188,0.75l0.644,0.428l2.238,1.494L13.734,14H2.441l0.331-1.65l1.125-0.562 l0.875-0.438l0.191-0.959L6.516,2.612 M5,0L3,10l-2,1l-1,5h16l-1-8l-3-2l-1-4L5,0L5,0z"
+                                fill="black"
+                            />
+                        </svg>
+                        <div style="line-height: 0.2rem">
+                            <h1 style="font-size: 1.5rem; font-weight: 900">
+                                ROCK SOLID
+                            </h1>
+                            <small style="font-size: 0.91rem; font-weight: 300"
+                                >CHRISTIAN CHURCH</small
+                            >
+                        </div>
+                    </div>
+                    <div style="line-height: 0.9">
+                        <p
+                            style="
+                                font-size: 1.1rem;
+                                line-height: 1.5rem;
+                                text-align: left;
+                            "
+                        >
+                            11340 W. Bell Road, Suite 200<br />
+                            Suprise, AZ 85378
+                        </p>
+
+                        <p style="font-size: 1.1rem; text-align: left">
+                            <br />(000) 000-0000
+                        </p>
+                    </div>
+                    <div class="footer1-socials">
+                        <svg
+                            class="icon2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill="black"
+                                d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"
+                            />
+                        </svg>
+                        <svg
+                            class="icon2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill="black"
+                                d="M17.316 6.246q.011.244.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.58 7.58 0 0 0 5.588-1.562a3.78 3.78 0 0 1-3.526-2.621a3.86 3.86 0 0 0 1.705-.065a3.78 3.78 0 0 1-3.028-3.703v-.047a3.8 3.8 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.72 10.72 0 0 0 7.781 3.945a3.8 3.8 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.6 7.6 0 0 0 2.397-.916a3.8 3.8 0 0 1-1.66 2.088a7.6 7.6 0 0 0 2.168-.594a7.6 7.6 0 0 1-1.884 1.953"
+                            />
+                        </svg>
+                        <svg
+                            class="icon2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill="black"
+                                d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"
+                            />
+                        </svg>
+                        <svg
+                            class="icon2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill="black"
+                                d="M5 3c0 1.062-.71 1.976-2.001 1.976C1.784 4.976 1 4.114 1 3.052C1 1.962 1.76 1 3 1s1.976.91 2 2M1 19V6h4v13zm6-8.556c0-1.545-.051-2.836-.102-3.951h3.594l.178 1.723h.076c.506-.811 1.746-2 3.822-2C17.1 6.216 19 7.911 19 11.558V19h-4v-6.861c0-1.594-.607-2.81-2-2.81c-1.062 0-1.594.86-1.873 1.569c-.102.254-.127.608-.127.963V19H7z"
+                            />
+                        </svg>
                     </div>
                 </div>
-                <div class="footer2"></div>
-                <div class="footer3"></div>
+                <div class="footer2">
+                    <div
+                        style="
+                            gap: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        "
+                    >
+                        <button
+                            class="square-button-secondary"
+                            style="
+                                font-size: 1rem;
+                                background-color: #2e2320;
+                                width: 15rem;
+                            "
+                        >
+                            PLAN A VISIT
+                        </button>
+                        <button
+                            class="square-button"
+                            style="
+                                font-size: 1rem;
+                                border: 2px solid #2e2320;
+                                width: 15rem;
+                            "
+                        >
+                            Log In
+                        </button>
+                    </div>
+                </div>
+                <div class="footer3">
+                    <div class="footer-links">
+                        <div class="footer-col1">
+                            <p class="footer-text-bold">QUICK LINKS</p>
+                            <p>About Rock Solid</p>
+                            <p>Locations</p>
+                            <p>Ministries</p>
+                            <p>Events</p>
+                            <p>Messages</p>
+                            <p>Ministries</p>
+                            <p>Serving</p>
+                        </div>
+
+                        <div class="footer-col2">
+                            <p class="footer-text-bold">GET IN TOUCH</p>
+                            <p>Plan a Visit</p>
+                            <p>Request Prayer</p>
+                            <p>Get Help</p>
+                            <p>Job Openings</p>
+                            <p>Report an Issue</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="footer4">
                 <a style="color: grey"> C 2025 </a>

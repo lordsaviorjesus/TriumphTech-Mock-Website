@@ -1,4 +1,6 @@
-/* Main Font - Inter */
+/* --------------------------------------------------
+   FONT
+-------------------------------------------------- */
 @font-face {
     font-family: "Inter";
     src: url("../fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
@@ -7,7 +9,9 @@
     font-style: normal;
 }
 
-/* Variables */
+/* --------------------------------------------------
+   VARIABLES
+-------------------------------------------------- */
 :root {
     --primary-color: #2563eb;
     --primary-dark: #1e40af;
@@ -16,7 +20,9 @@
     --bg-light: #f8fafc;
 }
 
-/* Reset */
+/* --------------------------------------------------
+   RESET
+-------------------------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +35,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
+/* --------------------------------------------------
+   HEADER + HERO WRAPPER
+-------------------------------------------------- */
 .header-and-hero {
     padding-top: 2rem;
     border-radius: 50px;
@@ -42,104 +50,8 @@ header {
     background: transparent;
 }
 
-.hero-service-container {
-    width: 100%;
-    margin-top: 6rem;
-    font-size: 2rem;
-    font-weight: 300;
-    display: flex;
-
-    gap: 2rem; /* spacing between hero1, hero2, h   ero3 */
-    align-items: center; /* align top edges */
-}
-.hero1,
-.hero2 {
-    margin-right: 2rem;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.hero3 {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center; /* right-align icons */
-    gap: 2rem; /* spacing between icons */
-}
-
-.countdown {
-    font-weight: 300;
-    font-size: 1.5rem;
-}
-
-.image-crop {
-    width: 1300px; /* cropped width */
-    height: 400px; /* cropped height */
-    overflow: hidden; /* hides the excess */
-}
-
-.image-crop img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* fill crop box */
-    object-position: center -150px; /* shift image upward */
-    border-radius: 2rem;
-}
-.welcome-container {
-    margin-top: 5rem;
-    max-width: 1300px;
-    display: flex;
-    width: 85vw;
-    text-align: left; /* optional: prevents weird text centering */
-
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.welcome-text-cols {
-    display: flex;
-    width: 100%; /* important */
-    justify-content: left; /* centers the two columns together */
-}
-.welcome-text-intro-bold {
-    font-size: 2rem;
-    font-weight: 700;
-    max-width: 60%;
-    color: rgb(50, 50, 50);
-}
-
-.welcome-text-intro {
-    width: 65%;
-}
-
-.h4 {
-    text-align: left;
-    color: rgb(165, 165, 165);
-    font-size: 1.2rem;
-    font-weight: 700;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.welcome-text-description {
-    justify-content: center;
-    font-size: 1.2rem;
-    width: 35%;
-    color: rgb(70, 70, 70);
-    font-weight: 350;
-}
 header .header-wrapper {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -160,18 +72,17 @@ header .right {
 
 header nav {
     display: flex;
-    flex: 1; /* takes all space between left & right */
+    flex: 1;
     justify-content: center;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
+/* NAV BUTTONS */
 .btn-group {
-    /* flex-direction: column; */
-
-    background-color: rgba(74, 66, 64, 0.5); /* semi-transparent */
-    backdrop-filter: blur(10px); /* blurs the background behind it */
-    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    background-color: rgba(74, 66, 64, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 4rem;
     display: flex;
 }
@@ -188,15 +99,14 @@ header nav {
     font-size: 1.2rem;
     font-weight: 500;
 }
+
 .nav-btn.active {
     background-color: rgba(102, 98, 98, 0.7);
-    color: white;
     transform: translateY(-2px);
 }
 
 .nav-btn:hover {
     background: rgba(102, 98, 98, 0.3);
-    color: white;
 }
 
 .nav-btn.click-animate {
@@ -215,81 +125,173 @@ header nav {
     }
 }
 
-/*mission */
+/* --------------------------------------------------
+   HERO SERVICE ICONS
+-------------------------------------------------- */
+.hero-service-container {
+    width: 100%;
+    margin-top: 6rem;
+    font-size: 2rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
 
+.hero1,
+.hero2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.countdown {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+/* --------------------------------------------------
+   IMAGE CROP
+-------------------------------------------------- */
+.image-crop {
+    width: 1300px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.image-crop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center -150px;
+    border-radius: 2rem;
+}
+
+/* --------------------------------------------------
+   WELCOME SECTION
+-------------------------------------------------- */
+.welcome-container {
+    margin-top: 5rem;
+    max-width: 1300px;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-text-cols {
+    display: flex;
+    width: 100%;
+}
+
+.welcome-text-intro-bold {
+    font-size: 2rem;
+    font-weight: 700;
+    max-width: 60%;
+    color: rgb(50, 50, 50);
+}
+
+.welcome-text-intro {
+    width: 65%;
+}
+
+.h4 {
+    color: rgb(165, 165, 165);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.welcome-text-description {
+    font-size: 1.2rem;
+    width: 35%;
+    color: rgb(70, 70, 70);
+    font-weight: 350;
+}
+
+/* --------------------------------------------------
+   MISSION SECTION
+-------------------------------------------------- */
 .mission-section-container {
     padding-top: 3rem;
-    position: relative;
     padding-bottom: 3rem;
-    border-radius: 50px;
+    position: relative;
     margin: 1rem;
-    background: url("../assets/mission.png") center/cover no-repeat;
     height: 95rem;
+    border-radius: 50px;
+    background: url("../assets/mission.png") center/cover no-repeat;
 }
-/* image container */
+
 .father-container-img {
-    width: 100%; /* fill the width of the container */
-    height: 400px; /* set desired height */
-    object-fit: cover; /* crops to fill, keeps aspect ratio */
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
     object-position: 20% 60%;
-    border-radius: 1rem; /* optional: rounded corners */
+    border-radius: 1rem;
 }
 
 .mission-container {
-    width: 95vw; /* fills most of the viewport */
-    max-width: 1300px; /* optional, keeps it from getting too wide */
+    width: 95vw;
+    max-width: 1300px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto; /* center the container */
-    padding: 0 2rem; /* optional padding inside */
+    padding: 0 2rem;
 }
 
 .gospel-subtext {
-    color: rgba(255, 255, 255, 0.8); /* whitish, 70% opacity */
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.2rem;
     width: 35%;
-    text-align: left;
     line-height: 2rem;
 }
+
 .gospel-space {
     width: 15%;
 }
 
 .mission-cards-section {
-    flex-direction: column;
-    padding-top: 6rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    padding-top: 6rem;
     gap: 2rem;
 }
 
 .mission-bottom-section {
     width: 100%;
     display: flex;
-    text-align: left;
-    align-items: left;
     flex-direction: column;
-    justify-content: left;
 }
 
 .gospel-text-bold {
-    display: flex;
-    text-align: left;
     font-size: 1.3rem;
     font-weight: 700;
     max-width: 60%;
-    color: rgba(255, 255, 255, 0.6); /* whitish, 70% opacity */
+    color: rgba(255, 255, 255, 0.6);
 }
+
 .mission-text-intro-bold {
     font-size: 2rem;
     width: 48%;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.9); /* whitish, 70% opacity */
+    color: rgba(255, 255, 255, 0.9);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
 .gospel-text-basic {
     display: flex;
     justify-content: flex-end;
@@ -302,20 +304,22 @@ header nav {
     letter-spacing: 1px;
 }
 
+/* CARDS */
 .cards {
-    padding-bottom: 6rem;
     display: flex;
     gap: 3rem;
+    padding-bottom: 6rem;
 }
+
 .card {
-    background-color: white;
     width: 25rem;
     height: 20rem;
+    background: white;
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
@@ -326,12 +330,14 @@ header nav {
     transform: translateY(-15px) scale(1.05);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
 }
+
 .card-h1 {
     padding-top: 0.5rem;
     font-size: 2rem;
     font-weight: 700;
     padding-bottom: 0.5rem;
 }
+
 .card-p1 {
     max-width: 22rem;
     padding-bottom: 1rem;
@@ -343,111 +349,253 @@ header nav {
     color: #eb3300;
 }
 
+/* --------------------------------------------------
+   SHARE SECTION
+-------------------------------------------------- */
 .share-section {
     background-color: #2e2320;
-    padding-top: 3rem;
-    position: relative;
-    padding-bottom: 3rem;
+    padding: 4rem 1rem;
     border-radius: 50px;
-    margin: 1rem;
-    height: 35rem;
-}
-.share-big-image {
-    border: 1px solid green;
-    width: 100%;
-}
-
-.share-smaller-image {
-    width: 100%;
-    border: 1px solid red;
+    margin: 1rem 1rem;
 }
 
 .share-container {
-    width: 95vw; /* fills most of the viewport */
-    max-width: 1300px; /* optional, keeps it from getting too wide */
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto; /* center the container */
-    padding: 2rem 2rem; /* optional padding inside */
+    flex-wrap: nowrap; /* keep text and images on the same row */
+    gap: 2rem; /* space between text and images */
+    width: 95vw;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 .share-text {
-    width: 90%;
+    flex: 1 1 auto; /* lets text grow naturally */
+    max-width: 35%; /* slightly wider than before but not huge */
+    color: white;
+}
+.share-text h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
 .share-text-small {
-    width: 85%;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.share-images {
+    flex: 1 1 65%;
+    display: flex;
+    gap: 1rem;
+    min-width: 300px;
+    height: 100%;
+}
+
+.share-big-image-wrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.share-big-image-wrapper img {
+    transform: scaleX(-1);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.share-smaller-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.small-image-wrapper {
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.small-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.image-caption {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .share-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .share-text,
+    .share-images {
+        flex: 1 1 100%;
+        max-width: 95%;
+    }
+
+    .share-images {
+        flex-direction: column;
+    }
+
+    .share-smaller-images {
+        flex-direction: row;
+    }
+
+    .small-image-wrapper img {
+        height: auto;
+        width: 48%;
+    }
+}
+
+/* --------------------------------------------------
+   VOLUNTEER CAROUSEL
+-------------------------------------------------- */
+.volunteer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
 }
 
 .volunteer-text-section {
     width: 80%;
     text-align: center;
+    margin-bottom: 2rem;
 }
-.volunteer-section {
+
+.volunteer-text-section img {
+    margin-bottom: 1rem;
+}
+
+.volunteer-carousel-wrapper {
+    position: relative; /* allow nav buttons outside */
     display: flex;
     align-items: center;
+}
+
+.eventSwiper {
+    width: 100%;
+}
+
+.swiper-slide .slide-content {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
-#portraitCarousel .carousel-item img {
-    height: 400px; /* Portrait height */
-    width: auto;
-    margin: 0 auto;
+.eventSwiper .swiper-slide img {
+    width: 400px;
+    height: 300px;
     object-fit: cover;
+    object-position: center;
     border-radius: 10px;
+    margin: 0 10px;
 }
 
-#portraitCarousel .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    bottom: -50px; /* text below the image */
+.slide-text {
+    margin-top: 8px;
+    text-align: center;
+    display: block;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
 }
 
-#portraitCarousel .carousel-control-prev-icon,
-#portraitCarousel .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent circle */
-    border-radius: 50%;
+.slide-text:hover {
+    text-decoration: underline;
+}
+
+/* Navigation buttons outside */
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    color: #fff;
 }
 
-.visit-container {
-    font-size: 1rem;
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0rem;
-}
-.love-word {
-    color: #eb3300;
+.swiper-button-prev {
+    left: -60px; /* outside carousel */
 }
 
-.after-love {
-    color: rgba(102, 98, 98, 0.7);
+.swiper-button-next {
+    right: -60px; /* outside carousel */
 }
-.h2-visit {
-    line-height: 4rem;
 
-    font-size: 3.5rem;
-    color: black;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-weight: 800;
-    letter-spacing: 1px;
+/* Responsive */
+@media (max-width: 1024px) {
+    .eventSwiper .swiper-slide img {
+        width: 180px;
+        height: 140px;
+        margin: 0 8px;
+    }
+    .swiper-button-prev {
+        left: -50px;
+    }
+    .swiper-button-next {
+        right: -50px;
+    }
 }
+
+@media (max-width: 768px) {
+    .eventSwiper .swiper-slide img {
+        width: 150px;
+        height: 120px;
+        margin: 0 6px;
+    }
+    .swiper-button-prev {
+        left: -40px;
+    }
+    .swiper-button-next {
+        right: -40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .eventSwiper .swiper-slide img {
+        width: 120px;
+        height: 100px;
+        margin: 0 4px;
+    }
+    .swiper-button-prev {
+        left: -30px;
+    }
+    .swiper-button-next {
+        right: -30px;
+    }
+}
+
+/* --------------------------------------------------
+   VISIT SECTION
+-------------------------------------------------- */
 .visit-section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-
     background: radial-gradient(
             circle 1000px at top right,
             #dcdcdc 0%,
@@ -469,16 +617,40 @@ header nav {
             rgba(220, 220, 220, 0) 70%
         ),
         white;
-    background-blend-mode: normal;
-    background-size: cover;
 }
-/*hf test */
 
-/* Hero */
+.visit-container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.h2-visit {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    line-height: 4rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.love-word {
+    color: #eb3300;
+}
+.after-love {
+    color: rgba(102, 98, 98, 0.7);
+}
+
+/* --------------------------------------------------
+   HERO SECTION 2
+-------------------------------------------------- */
 .hero-section {
-    position: relative;
     height: 80vh;
     min-height: 500px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -488,7 +660,6 @@ header nav {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    /* background: rgba(0, 0, 0, 0.4); */
 }
 
 .hero-content {
@@ -498,9 +669,8 @@ header nav {
     color: white;
     padding-top: 7rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .hero-title {
@@ -516,6 +686,7 @@ header nav {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* BUTTONS */
 .square-button,
 .square-button-secondary,
 .square-button-alternate {
@@ -528,84 +699,122 @@ header nav {
     transition: all 0.3s ease;
 }
 
-.square-button-alternate {
-    background: #eb3300;
-    color: white;
-}
-.square-button-alternate:hover {
-    background: #e7542b;
-    color: white;
-}
-
 .square-button {
     background: white;
     color: black;
+}
+.square-button:hover {
+    color: #eb3300;
 }
 
 .square-button-secondary {
     background: #6a5c61;
     color: white;
 }
-
-.square-button:hover {
-    color: #eb3300;
-}
 .square-button-secondary:hover {
     color: #eb3300;
 }
 
+.square-button-alternate {
+    background: #eb3300;
+    color: white;
+}
+.square-button-alternate:hover {
+    background: #e7542b;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 .footer-section {
-    background-color: white;
+    background: white;
     padding-top: 3rem;
-    text-align: center;
-    position: relative;
     padding-bottom: 3rem;
     border-radius: 50px;
     margin: 1rem;
     height: 35rem;
-    /* border: 1px solid #e0e0e0; */
+    text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
+
 .footer-container {
-    width: 75%; /* fills most of the viewport */
+    width: 75%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto; /* center the container */
-    padding: 2rem 2rem; /* optional padding inside */
+    padding: 2rem;
 }
 
 .footer1,
 .footer2,
 .footer3 {
-    background-color: #f0f0f0;
-    display: flex;
     width: 33%;
-    height: 200px;
+    height: 300px;
     margin: 0 1rem;
+    background: #f8f7f7;
     border-radius: 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer1 {
+    padding: 1rem 1.5rem;
+}
+.footer2 {
+    padding: 1rem 1.5rem;
+    justify-content: center;
+}
+.footer3 {
+    padding: 1rem 1.5rem;
+    justify-content: center;
+}
+
+.footer1-socials {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.footer-col1,
+.footer-col2 {
+    width: 100%;
+    border: "1px solid red";
     text-align: left;
+    font-size: 1.1rem;
+    line-height: 1rem;
+}
+
+.footer-text-bold {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: grey;
 }
 
 .footer4 {
     color: #eb3300;
 }
 
-/* Responsive */
+/* --------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------- */
 @media (max-width: 992px) {
     .header {
         width: 100%;
         margin: 2rem;
-        padding: 1rem 1rem;
+        padding: 1rem;
     }
+
     .header-wrapper {
         width: 100%;
-        padding: 1rem 1rem;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
     }
@@ -616,29 +825,28 @@ header nav {
     .hero-subtitle {
         font-size: 1rem;
     }
-    header nav {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 576px) {
     .header {
         width: 100%;
         margin: 2rem;
-        padding: 1rem 1rem;
+        padding: 1rem;
     }
+
     .header-wrapper {
         width: 100%;
-        padding: 1rem 1rem;
-        display: flex;
+        padding: 1rem;
         flex-direction: column;
     }
+
     .hero-title {
         font-size: 1.5rem;
     }
     .hero-subtitle {
         font-size: 0.9rem;
     }
+
     .square-button,
     .square-button-secondary {
         font-size: 0.9rem;
