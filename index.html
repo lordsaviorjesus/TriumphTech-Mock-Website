@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <div class="header-and-hero">
+        <div class="header-and-hero" id="toppage">
             <!-- Header -->
             <header class="py-2">
                 <div class="header-wrapper">
@@ -44,28 +44,68 @@
                         </div>
                     </div>
 
-                    <!-- Bootstrap Button Group Navigation -->
                     <div
                         class="btn-group"
                         role="group"
                         aria-label="Navigation Buttons"
                     >
-                        <button type="button" class="nav-btn">
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="toppage"
+                        >
+                            Home
+                        </button>
+
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="visit-section"
+                        >
                             Plan A Visit
                         </button>
-                        <button type="button" class="nav-btn">
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="mission-section"
+                        >
                             Who We Are
                         </button>
-                        <button type="button" class="nav-btn">Connect</button>
-                        <button type="button" class="nav-btn">
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="volunteer-section"
+                        >
+                            Connect
+                        </button>
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="mission-section"
+                        >
                             Ministries
                         </button>
-                        <button type="button" class="nav-btn">Events</button>
-                        <button type="button" class="nav-btn">Media</button>
-                        <button type="button" class="nav-btn">
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="share-section"
+                        >
+                            Events
+                        </button>
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="share-section"
+                        >
+                            Media
+                        </button>
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            data-target="visit-section"
+                        >
                             Give Online
                         </button>
-                        <button type="button" class="nav-btn">|||</button>
                     </div>
 
                     <!-- Right: Create Account -->
@@ -88,6 +128,7 @@
 
             <!-- Hero Section -->
             <section
+                id="hero-section"
                 class="hero-section text-center d-flex align-items-center justify-content-center"
             >
                 <div class="hero-content">
@@ -168,6 +209,7 @@
 
         <!-- Welcome Section -->
         <section
+            id="welcome-section"
             class="welcome-section d-flex align-items-center justify-content-center"
             style="margin-bottom: 8rem"
         >
@@ -199,7 +241,7 @@
         </section>
 
         <!-- Mission Section -->
-        <section class="mission-section-container">
+        <section id="mission-section" class="mission-section-container">
             <div class="mission-container">
                 <div class="mission-cards-section">
                     <h1 class="mission-h1">Our Mission is Simple</h1>
@@ -280,7 +322,7 @@
         </section>
 
         <!-- visit Section -->
-        <section class="visit-section">
+        <section id="visit-section" class="visit-section">
             <div class="visit-container">
                 <h2 class="h2-visit">
                     ROCK SOLID CHURCH CONTINUES TO HOLD OUT
@@ -293,7 +335,7 @@
             </div>
         </section>
 
-        <section class="volunteer-section">
+        <section id="volunteer-section" class="volunteer-section">
             <div class="volunteer-text-section">
                 <img src="assets/yt_svg.svg" width="125" height="125" />
                 <h1
@@ -313,11 +355,11 @@
                 </p>
             </div>
 
-            <div class="volunteer-carousel-wrapper container my-5">
-                <!-- Navigation buttons outside carousel -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
+            <!-- Navigation buttons outside carousel -->
+            <div
+                class="volunteer-carousel-wrapper container my-5"
+                style="display: flex; flex-direction: row"
+            >
                 <!-- Swiper -->
                 <div class="swiper eventSwiper">
                     <div class="swiper-wrapper">
@@ -388,9 +430,15 @@
                     </div>
                 </div>
             </div>
+            <div class="swiper eventSwiper">
+                <div class="custom-nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
         </section>
 
-        <section class="share-section">
+        <section id="share-section" class="share-section">
             <div class="share-container">
                 <div class="share-text">
                     <h1>Saved Lives Are Changed Lives.</h1>
@@ -440,7 +488,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer-section">
+        <footer id="footer-section" class="footer-section">
             <div class="footer-container">
                 <div class="footer1">
                     <div
