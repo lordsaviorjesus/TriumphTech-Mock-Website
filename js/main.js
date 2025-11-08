@@ -1,27 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".eventSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            640: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 30 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
-        },
-    });
-
+    // =============================== FADE-IN OBSERVER
     const observerOptions = { root: null, threshold: 0.1, rootMargin: "0px" };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -37,27 +15,27 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     sections.forEach((section) => observer.observe(section));
 
+    // =============================== MISSION CARDS ANIMATION
     const missionCards = document.querySelectorAll(".mission-card");
     missionCards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(30px)";
-            const cardObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.style.transition = "all 0.6s ease";
-                            entry.target.style.opacity = "1";
-                            entry.target.style.transform = "translateY(0)";
-                        }, index * 150);
-                        cardObserver.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            cardObserver.observe(card);
-        }, 0);
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.transition = "all 0.6s ease";
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }, index * 150);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        cardObserver.observe(card);
     });
 
+    // =============================== IMAGE CLICK EFFECT
     const clickableImages = document.querySelectorAll(".clickable-image");
     clickableImages.forEach((image) => {
         image.addEventListener("click", function (e) {
@@ -68,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // =============================== BUTTON RIPPLE
     const buttons = document.querySelectorAll(
         ".hero-btn, .story-btn, .cta-btn"
     );
@@ -101,73 +80,68 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.head.appendChild(style);
 
+    // =============================== HEADER SCROLL SHADOW
     window.addEventListener("scroll", function () {
         document.querySelector("header").style.boxShadow = "none";
     });
 
-    const iconSize = "25px",
-        iconColor = "#ff0000";
-    document.querySelectorAll(".icon").forEach((icon) => {
-        icon.style.width = iconSize;
-        icon.style.height = iconSize;
-        icon.style.fill = iconColor;
-    });
-
-    const iconSize2 = "35px",
-        iconColor2 = "black";
-    document.querySelectorAll(".icon2").forEach((icon) => {
-        icon.style.width = iconSize2;
-        icon.style.height = iconSize2;
-        icon.style.fill = iconColor2;
-    });
-
-    const navButtons = document.querySelectorAll(".nav-btn");
-navButtons[0].classList.add("active");
-
-navButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        // ---- Active state and animation ----
-        navButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        button.classList.remove("click-animate");
-        void button.offsetWidth;
-        button.classList.add("click-animate");
-
-        // ---- Smooth scroll ----
-        const targetId = button.dataset.target; // make sure data-target is set on your button
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - 80, // adjust if header is sticky
-                behavior: "smooth",
-            });
-        }
-    });
-
-    button.addEventListener(
-        "mouseenter",
-        () => (button.style.transform = "translateY(-2px)")
-    );
-    button.addEventListener(
-        "mouseleave",
-        () => (button.style.transform = "translateY(0)")
-    );
-});
-
-    document
-        .querySelectorAll(
-            ".square-button, .square-button-secondary, .square-button-alternate"
-        )
-        .forEach((button) => {
-            button.addEventListener(
-                "mouseenter",
-                () => (button.style.transform = "translateY(-2px)")
-            );
-            button.addEventListener(
-                "mouseleave",
-                () => (button.style.transform = "translateY(0)")
-            );
+    // =============================== ICONS
+    const icons = [
+        { selector: ".icon", size: "25px", color: "#ff0000" },
+        { selector: ".icon2", size: "35px", color: "black" },
+    ];
+    icons.forEach((ic) => {
+        document.querySelectorAll(ic.selector).forEach((icon) => {
+            icon.style.width = ic.size;
+            icon.style.height = ic.size;
+            icon.style.fill = ic.color;
         });
+    });
+
+    // =============================== NAV BUTTONS
+    const navButtons = document.querySelectorAll(".nav-btn");
+    navButtons[0]?.classList.add("active");
+    navButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+            button.classList.remove("click-animate");
+            void button.offsetWidth;
+            button.classList.add("click-animate");
+
+            const targetId = button.dataset.target;
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: "smooth",
+                });
+            }
+        });
+
+        button.addEventListener(
+            "mouseenter",
+            () => (button.style.transform = "translateY(-2px)")
+        );
+        button.addEventListener(
+            "mouseleave",
+            () => (button.style.transform = "translateY(0)")
+        );
+    });
+
+    const squareButtons = document.querySelectorAll(
+        ".square-button, .square-button-secondary, .square-button-alternate"
+    );
+    squareButtons.forEach((button) => {
+        button.addEventListener(
+            "mouseenter",
+            () => (button.style.transform = "translateY(-2px)")
+        );
+        button.addEventListener(
+            "mouseleave",
+            () => (button.style.transform = "translateY(0)")
+        );
+    });
 
     // =============================== COUNTDOWN
     function updateCountdown() {
@@ -197,29 +171,25 @@ navButtons.forEach((button) => {
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // =============================== MULTI-ITEM CAROUSEL
-    document.addEventListener("DOMContentLoaded", function () {
-        const volunteerSwiper = new Swiper(".eventSwiper", {
-            slidesPerView: 5,
-            spaceBetween: 20,
-            loop: true,
-            slidesPerGroup: 1,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                1024: { slidesPerView: 5, slidesPerGroup: 1 },
-                768: { slidesPerView: 3, slidesPerGroup: 1 },
-                640: { slidesPerView: 2, slidesPerGroup: 1 },
-                0: { slidesPerView: 1, slidesPerGroup: 1 },
-            },
-        });
+    // =============================== VOLUNTEER SWIPER
+    const volunteerSwiper = new Swiper(".eventSwiper", {
+        slidesPerView: "auto", // <-- change this
+        spaceBetween: 20,
+        loop: true,
+        slidesPerGroup: 1,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            1024: { spaceBetween: 20 },
+            768: { spaceBetween: 15 },
+            640: { spaceBetween: 10 },
+            0: { spaceBetween: 5 },
+        },
     });
-
-    //==scroll
 });
