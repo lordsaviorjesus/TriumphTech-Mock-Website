@@ -566,6 +566,15 @@ header nav {
     text-decoration: underline;
 }
 
+/* Navigation Buttons Below Carousel */
+.swiper-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* distance below carousel */
+    gap: 20px;
+}
+
 /* Navigation Buttons */
 .swiper-button-prev,
 .swiper-button-next {
@@ -579,8 +588,8 @@ header nav {
     align-items: center;
     cursor: pointer;
     font-size: 1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
+    top: auto; /* remove previous positioning */
+    transform: none;
 }
 
 @media (max-width: 1024px) {
